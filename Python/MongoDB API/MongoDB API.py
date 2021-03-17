@@ -12,6 +12,9 @@ class MongoAPI:
         self.client = MongoClient("mongodb://mymongo_1:27017/")     # When both Mongo and This application is running on
                                                                     # Docker and we are using Docker Compose
 
+        ### exposed port of mymongo_1 is 5000
+        # shouldn't be self.client = MongoClient("mongodb://mymongo_1:5000/") ?                                                             
+
         database = data['database']
         collection = data['collection']
         cursor = self.client[database]

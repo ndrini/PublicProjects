@@ -4,7 +4,10 @@ On MongoDB API folder with
 
     $ docker-compose up
 
+
 # Test
+
+## 1 Backend 
 That flask runs: 
 
     curl --request GET 'http://localhost:5001'
@@ -12,6 +15,16 @@ That flask runs:
 expected: 
 
     {"Status": "UP"}
+
+## 2 DB
+
+That port 5000 is available:
+
+    $ curl localhost:5000
+
+Expected answer: 
+
+    It looks like you are trying to access MongoDB over HTTP on the native driver port.
 
 
 That the database is available: 
@@ -27,6 +40,15 @@ Error if the reponse is:
 
     {"Error": "Please provide connection information"}
 
+
+
+# Errors
+
+  + no dababase initialization  "database"
+    + the backend needs a database called "IshmeetDB" and a "collection" called "people"
+
+  + not any communication between backend and mongodb
+  
 
 # ToDo 
 - check real communication between flask and mongodb
